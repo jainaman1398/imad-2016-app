@@ -17,7 +17,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/C:\Users\lenovo\Desktop', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'aj.png'));
+  res.sendFile(path.join(__dirname, 'C:\Users\lenovo\Desktop', 'aj.jpg'));
 });
 
 
