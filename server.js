@@ -4,13 +4,30 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleone={
+var articles={
+ articleone:{
     title: ' Article-one|AJ ',
     heading:"Article-one",
     date:"13 april,1998",
     content: ` this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj'sworld
     this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world `,
+},
+articletwo:{
+    
+    title: ' Article-two|AJ ',
+    heading:"Article-two",
+    date:"13 april,1998",
+    content: ` this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj'sworld
+    this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world `,
+},
+articlethree:{
+    
+    title: ' Article-two|AJ ',
+    heading:"Article-two",
+    date:"13 april,1998",
+    content: ` this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj'sworld
+    this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world `,
+}
 };
 function createtemplate(data){
     var title=data.title;
@@ -38,8 +55,9 @@ function createtemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/article-one', function (req, res) {
-  res.send(createtemplate(articleone));
+app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articleName;
+  res.send(createtemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
