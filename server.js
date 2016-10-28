@@ -5,19 +5,49 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone={
+    title: ' Article-one|AJ ',
+    heading:"Article-one",
+    date:"13 april,1998",
+    content: ` this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj'sworld
+    this is aj's lappy n aj's world this is aj's lappy n aj's world this is aj's lappy n aj's world `,
+};
+function createtemplate(data){
+    var title=data.title;
+    var date=data.date;
+    var content=data.content;
+    var htmltemplate=`
+    <html>
+    <head>
+    <title>
+    ${title};
+    </title>
+    </head>
+    <body>
+    <div>
+    ${date};
+    </div>
+    <div>
+    ${content};
+    </div>
+    </body>
+    </html> `;
+    return htmltemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createtemplate(articleone));
 });
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/C:\Users\lenovo\Desktop', function (req, res) {
-  res.sendFile(path.join(__dirname, 'C:\Users\lenovo\Desktop', 'aj.jpg'));
+
+app.get('/ui/madi.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui/madi.png', 'madi.png'));
 });
 
 
