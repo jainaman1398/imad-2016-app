@@ -15,11 +15,15 @@ body {
 .bold {
     font-weight: bold;
 }
+.aj{
+    height: 400px;
+}
 
 .img-medium {
     height: 200px;
    
 }
+
 .container {
     padding-top:60px;
     padding-left:20px;
