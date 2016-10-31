@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var http=require('http');
-var pool=equire('pg').pool;
+var pool=require('pg').pool;
 var config={
   user: 'jainaman1398', 
   database: 'jainaman1398',
