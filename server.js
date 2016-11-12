@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var http=require('http');
-//var pool=require('pg').pool;
+var pool=require('pg').pool;
 var config={
   user: 'jainaman1398', 
   database: 'jainaman1398',
@@ -11,7 +11,7 @@ var config={
   password:process.env.DB_PASSWORD
     
 };
-var pool= new pool(config);
+//var pool= new pool(config);
 app.get('/test-db',function(req,res){
     
     pool.query('SELECT * FROM article',function(err,result){
