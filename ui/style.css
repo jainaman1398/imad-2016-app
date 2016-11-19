@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .center {
@@ -26,6 +26,13 @@ body {
     font-family: cursive;
     padding-left: 110px;
     padding-right: 20px;
+}
+.articles{
+     max-width: 800px;
+    padding-left: 20px;
+    padding-top: 50px;
+    font-family: initial;
+    color: #e4965e;
 }
 
 .comment {
