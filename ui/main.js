@@ -120,7 +120,7 @@ function loadArticles () {
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
-                 request.open('GET','/submit-comment/:articleone',true);
+                 request.open('GET','/submit-comment/:Article-one',true);
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
             }
