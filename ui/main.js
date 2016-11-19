@@ -2,7 +2,7 @@ function loadLoginForm () {
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
         <input type="text" id="username" placeholder="username" />
-        <input type="password" id="password"  placeholder="password" />
+        <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
         <input type="submit" id="register_btn" value="Register" />
@@ -116,12 +116,10 @@ function loadArticles () {
                 for (var i=0; i< articleData.length; i++) {
                     content += `<li>
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>
-                     <input type="submit" id="login_btn" value="Comment" />`;
+                    (${articleData[i].date.split('T')[0]})</li>`;
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
-               //  request.open('GET','/submit-comment/:articleName',true);
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
             }
@@ -129,7 +127,6 @@ function loadArticles () {
     };
     
     request.open('GET', '/get-articles', true);
-   
     request.send(null);
 }
 
