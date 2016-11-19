@@ -127,7 +127,7 @@ function loadArticles () {
     };
     
     request.open('GET', '/get-articles', true);
-    request.open('GET','/submit-comment/:articleName',true);
+   
     request.send(null);
 }
 
@@ -137,3 +137,4 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
+ request.open('GET','/submit-comment/:articleName',true);
