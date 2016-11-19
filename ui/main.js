@@ -120,6 +120,7 @@ function loadArticles () {
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
+                 request.open('GET','/submit-comment/:articleone',true);
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
             }
@@ -137,4 +138,3 @@ loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
- request.open('GET','/submit-comment/:articleName',true);
