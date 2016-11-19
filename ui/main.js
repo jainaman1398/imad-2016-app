@@ -127,6 +127,7 @@ function loadArticles () {
     };
     
     request.open('GET', '/get-articles', true);
+    request.open('GET','/submit-comment/:articleName',true);
     request.send(null);
 }
 
