@@ -116,11 +116,12 @@ function loadArticles () {
                 for (var i=0; i< articleData.length; i++) {
                     content += `<li>
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
-                    (${articleData[i].date.split('T')[0]})</li>`;
+                    (${articleData[i].date.split('T')[0]})</li>
+                     <input type="submit" id="login_btn" value="Comment" />`;
                 }
                 content += "</ul>"
                 articles.innerHTML = content;
-                 request.open('GET','/submit-comment/:Article-one',true);
+               //  request.open('GET','/submit-comment/:articleName',true);
             } else {
                 articles.innerHTML('Oops! Could not load all articles!')
             }
